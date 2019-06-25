@@ -88,18 +88,19 @@ function onInit() {
         var attributes = wrapper.attributes;
         Array.from(attributes).forEach(social => {
             if (socialsMediaSupport[social.name]) {
-                if (URLvalidation(social.value)) {
-                    wrapper.appendChild(socialCreation(social.name, social.value, 'social'));
-                } else if (social.name !== 'class') {
-                    warningNotification(`SOCIALS API WARNING: ${social.name} was not added Because Invalid URL!`);
-                }
-            } else {
-                (social.name !== 'class') ? warningNotification(`${social.name} not supported on this Library ..`): null;
+                    return URLvalidation(social.value) ? wrapper.appendChild(socialCreation(social.name, social.value, 'social')) : warningNotification(`SOCIALS API WARNING: ${social.name} was not added Because Invalid URL! url must start with http:// or https://`);
             }
+            return warningNotification(`${social.name} not supported on this Library ..`);
         })
 
     } catch (e) {
-        console.error('Something Wrong implementing Socials Library -->', e);
+        var error;
+        if (e['message'] === "Cannot read property 'attributes' of null") {
+            error = 'Seems you do not implement correct selector!'
+        } else {
+            error = e;
+        }
+        console.error('Something Wrong implementing Socials Library -->', error);
     }
 }
 
