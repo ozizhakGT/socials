@@ -6,9 +6,9 @@ ADD ONE OF THE SCRIPTS IN YOUR PROJECT
 <script src="{{'PATH'}}/socialRuler.es5.js"></script>
 ```
 
-### ADD THIS DIV INTO YOUR <body> INDEX PAGE. 
+### ADD SELECTORS INTO YOUR <body> INDEX PAGE. 
 ```
-<div class="socials" facebook='{{YOUR_LINK}}' twitter='{{YOUR_LINK}}' instegram='{{YOUR_LINK}}' telegram='{{YOUR_LINK}}'linkedin='{{YOUR_LINK}}'></div>
+<socials-ruler facebook='{{YOUR_LINK}}' twitter='{{YOUR_LINK}}' instegram='{{YOUR_LINK}}' telegram='{{YOUR_LINK}}'linkedin='{{YOUR_LINK}}'></socials-ruler>
 ```
 ### NOTES: 
 * NOT ALL SOCIALS OPTION REQUIERD.
